@@ -7,7 +7,7 @@ const getProducts = async() => {
 };
 
 const insertProduct = async(productName) => {
-    // Add your solution here!
+    await query('INSERT INTO products(name) VALUES($1)', [productName])
 };
 
 module.exports = {
