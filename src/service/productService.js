@@ -1,15 +1,14 @@
-const { query } = require('../client/postgresql');
+const { connection } = require('../client/postgresql');
 
 const getProducts = async() => {
-    const products = query('select * from products');
+    return await connection.query('SELECT * FROM products');
 
-    return products;
+
 };
 
 const insertProduct = async(productName) => {
-    // Add your solution here!
+    await connection.query('INSERT INTO products (name) VALUES ($1)', [productName])
 };
-
 module.exports = {
     getProducts,
     insertProduct

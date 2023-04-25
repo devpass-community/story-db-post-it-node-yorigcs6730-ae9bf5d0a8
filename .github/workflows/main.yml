@@ -16,7 +16,7 @@ jobs:
         run: yarn
 
       - name: Docker
-        run: docker-compose up
+        run: docker-compose up -d
 
       - name: Evercode checks
         uses: 'evercodeinc/gitaction-testfile@v1'
